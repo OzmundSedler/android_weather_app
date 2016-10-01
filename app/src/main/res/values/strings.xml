@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">WeatherApplication</string>
+    <string name="first_town">Springfield</string>
+    <string name="second_town">Racoon City</string>
+    <string name="third_town">Silent Hill</string>
+    <string name="fourth_town">Vice city</string>
+    <string name="fifth_town">South park</string>
+    <string name="temperature">-31C</string>
+    <string name="status">Очень холодно</string>
+    <string name="town">Vice city</string>
+    <string name="fone">Обновлять в фоне</string>
+    <string name="no_fone">Не обновлять в фоне</string>
+</resources>
