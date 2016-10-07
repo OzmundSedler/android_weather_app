@@ -13,17 +13,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/first_town"
-        android:id="@+id/firstTownButton"
+        android:id="@+id/springfieldButton"
         android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/thirdTownButton"
-        android:layout_alignStart="@+id/thirdTownButton"
+        android:layout_alignLeft="@+id/silentButton"
+        android:layout_alignStart="@+id/silentButton"
         android:layout_marginBottom="52dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/second_town"
-        android:id="@+id/secondTownButton"
+        android:id="@+id/racoonButton"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp" />
@@ -32,8 +32,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/third_town"
-        android:id="@+id/thirdTownButton"
-        android:layout_above="@+id/fourthTownButton"
+        android:id="@+id/silentButton"
+        android:layout_above="@+id/viceButton"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="42dp" />
 
@@ -41,7 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/fourth_town"
-        android:id="@+id/fourthTownButton"
+        android:id="@+id/viceButton"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
@@ -49,9 +49,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/fifth_town"
-        android:id="@+id/fifthTownButton"
-        android:layout_below="@+id/fourthTownButton"
-        android:layout_alignRight="@+id/firstTownButton"
-        android:layout_alignEnd="@+id/firstTownButton"
+        android:id="@+id/southButton"
+        android:layout_below="@+id/viceButton"
+        android:layout_alignRight="@+id/springfieldButton"
+        android:layout_alignEnd="@+id/springfieldButton"
         android:layout_marginTop="29dp" />
 </RelativeLayout>

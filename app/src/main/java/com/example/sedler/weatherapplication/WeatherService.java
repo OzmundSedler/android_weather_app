@@ -3,7 +3,7 @@ package com.example.sedler.weatherapplication;
 import android.app.IntentService;
 import android.content.Intent;
 import android.util.Log;
-
+import android.support.v4.content.LocalBroadcastManager;
 import java.io.IOException;
 
 import ru.mail.weather.lib.City;
@@ -29,7 +29,7 @@ public class WeatherService extends IntentService {
             Weather weather = WeatherUtils.getInstance().loadWeather(city);
             weatherStorage.saveWeather(city, weather);
             Intent wIntent = new Intent(WEATHER_ACTION);
-            sendBroadcast(wIntent);
+            LocalBroadcastManager.getInstance(this).sendBroadcast(wIntent);
         }
         catch (IOException e) {
             Log.d("ERROR","error");

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v4.content.LocalBroadcastManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -23,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
     BroadcastReceiver broadcastReceiver;
     WeatherStorage weatherStorage;
 
-    public final static String WEATHER_ACTION = "com.example.sedler.weatherapplication.action.weather";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         weatherStorage = WeatherStorage.getInstance(MainActivity.this);
         townButton.setText(weatherStorage.getCurrentCity().name());
         setWeather();
-        IntentFilter intentFilter = new IntentFilter(WEATHER_ACTION);
+        IntentFilter intentFilter = new IntentFilter(WeatherService.WEATHER_ACTION);
         broadcastReceiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
@@ -79,14 +79,14 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-        registerReceiver(broadcastReceiver, intentFilter);
+        LocalBroadcastManager.getInstance(this).registerReceiver(broadcastReceiver, intentFilter);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
 
-        unregisterReceiver(broadcastReceiver);
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(broadcastReceiver);
     }
 
     private void setWeather() {
